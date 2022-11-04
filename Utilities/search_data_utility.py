@@ -17,9 +17,12 @@ class Util:
         cu.click_element(element_locator=Spl.search_button)
         time.sleep(3)
         cu.scroll_down()
-        doctor_name_lst = cu.get_multiple_button(element_locator=Rpl.doctor_name)
-        doctor_details = cu.get_multiple_button(element_locator=Rpl.doctor_address)
-        return doctor_name_lst, doctor_details
+        try:
+            doctor_name_lst = cu.get_multiple_button(element_locator=Rpl.doctor_name)
+            doctor_details = cu.get_multiple_button(element_locator=Rpl.doctor_address)
+            return doctor_name_lst, doctor_details
+        except:
+            return [], []
 
     def save_csv(self, city, doctor_name_lst, doctor_details):
         columns = ['name', 'address', 'mobile_number']

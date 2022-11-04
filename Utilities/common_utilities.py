@@ -42,3 +42,8 @@ class CommonUtilites:
             EC.visibility_of_element_located(locator=element_locator))
         tag.click()
         tag.clear()
+
+    # @staticmethod
+    # def is_displayed(element_locator):
+    #     return driver.find_elements(by=element_locator[0], value=element_locator[1])
+    #
