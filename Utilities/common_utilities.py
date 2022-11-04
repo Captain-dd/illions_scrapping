@@ -29,7 +29,11 @@ class CommonUtilites:
     @staticmethod
     def get_multiple_button(element_locator):
 
-        WebDriverWait(driver=driver, timeout=explicit_wait_time)\
-            .until(EC.visibility_of_element_located(locator=element_locator))
+        WebDriverWait(driver=driver, timeout=explicit_wait_time).until(EC.visibility_of_element_located(locator=element_locator))
 
         return driver.find_elements(by=element_locator[0], value=element_locator[1])
+
+    @staticmethod
+    def scroll_down():
+        driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+

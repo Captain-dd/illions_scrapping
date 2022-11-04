@@ -14,7 +14,8 @@ class TestSearchPage:
         cu.click_element(element_locator=Spl.provider_city_radioButton)
         cu.send_text(element_locator=Spl.city_field, text= 'New York')
         cu.click_element(element_locator=Spl.search_button)
-
+        time.sleep(4)
+        cu.scroll_down()
         doctor_name_lst = cu.get_multiple_button(element_locator=Rpl.doctor_name)
         doctor_details = cu.get_multiple_button(element_locator=Rpl.doctor_address)
 
