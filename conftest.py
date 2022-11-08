@@ -1,13 +1,16 @@
 from selenium import webdriver
-
+from selenium.webdriver.chrome.options import Options
 from webdriver_manager.chrome import ChromeDriverManager
 
 import pytest
 
-driver = webdriver.Chrome(ChromeDriverManager().install())
+option = Options()
+option.headless =True
+driver = webdriver.Chrome(ChromeDriverManager().install(), options=option)
 
 @pytest.fixture()
 def initiate_driver():
+
     driver.get('https://enrollhfs.illinois.gov/en/provider-search')
     driver.maximize_window()
     driver.implicitly_wait(10)

@@ -46,10 +46,11 @@ class Util:
             try:
                 temp = doctor_details[i]
                 if i % 2 == 0:
-                    df.at[i // 2, 'address'] = temp
+                    x = (temp.replace('Driving directions', '')).replace('\n', '')
+                    df.at[i // 2, 'address'] = x
 
                 else:
-                    df.at[i // 2, 'mobile_number'] = temp
+                    df.at[i // 2, 'mobile_number'] = temp[7:21]
 
             except:
                 pass
