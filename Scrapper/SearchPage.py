@@ -7,7 +7,7 @@ class TestSearchPage:
 
     def test_perform_search(self):
         df = pd.read_excel(excel_location)
-        d = [i for i in list(df['City'][:1])]
+        d = [i for i in list(df['City'][:no_of_rows_in_excel])]
         lis = [(i, x) for i, x in enumerate(d)]
         final_doctor_name=[]
         final_doctor_detail = []
@@ -15,7 +15,7 @@ class TestSearchPage:
         for temp in lis:
             x, city = temp
             city_temp=[]
-            doctor_name_lst, doctor_details = Util().get_all_data('Glendale')
+            doctor_name_lst, doctor_details = Util().get_all_data(city)
             if doctor_name_lst == [] and doctor_details == []:
                 continue
             else:
