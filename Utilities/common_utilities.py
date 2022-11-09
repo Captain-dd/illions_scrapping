@@ -37,13 +37,16 @@ class CommonUtilites:
 
     @staticmethod
     def scroll_down():
-        result_text=driver.find_element(by=By.CSS_SELECTOR,value=search_res).text
-        result_text=int(result_text.split(' ')[0])
-        # driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
-        txt=driver.find_elements(by=By.CSS_SELECTOR,value=load_txt)
-        while result_text!=len(txt)//2:
+        try:
+            result_text=driver.find_element(by=By.CSS_SELECTOR,value=search_res).text
+            result_text=int(result_text.split(' ')[0])
+            txt=driver.find_elements(by=By.CSS_SELECTOR,value=load_txt)
+            while result_text!=len(txt)//2:
+                driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+                txt = driver.find_elements(by=By.CSS_SELECTOR, value=load_txt)
+        except:
             driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
-            txt = driver.find_elements(by=By.CSS_SELECTOR, value=load_txt)
+
 
     #
     @staticmethod

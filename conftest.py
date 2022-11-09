@@ -5,7 +5,7 @@ from webdriver_manager.chrome import ChromeDriverManager
 import pytest
 
 option = Options()
-option.headless =False
+option.headless =True
 driver = webdriver.Chrome(ChromeDriverManager().install(), options=option)
 
 @pytest.fixture()
