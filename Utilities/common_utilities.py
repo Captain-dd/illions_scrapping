@@ -1,10 +1,13 @@
+import time
+from idlelib import browser
+
 from conftest import driver
 
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
 from config.control import explicit_wait_time
-
+from Locators.SearchPageLocators import *
 
 class CommonUtilites:
 
@@ -34,8 +37,15 @@ class CommonUtilites:
 
     @staticmethod
     def scroll_down():
-        driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+        result_text=driver.find_element(by=By.CSS_SELECTOR,value=search_res).text
+        result_text=int(result_text.split(' ')[0])
+        # driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+        txt=driver.find_elements(by=By.CSS_SELECTOR,value=load_txt)
+        while result_text!=len(txt)//2:
+            driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+            txt = driver.find_elements(by=By.CSS_SELECTOR, value=load_txt)
 
+    #
     @staticmethod
     def clear_input(element_locator):
         tag = WebDriverWait(driver=driver, timeout=explicit_wait_time).until(

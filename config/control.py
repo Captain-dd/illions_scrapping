@@ -1,6 +1,6 @@
 # main Data
 
-excel_location = r'E:\empclaims\illions_findProviders_jindal\Scrapper\city_lst.xlsx'
+excel_location = r'C:\Users\Jindal\Desktop\EMP\illions_scrapping\Locators\city_lst.xlsx'
 
 no_of_rows_in_excel=288
 
