@@ -47,8 +47,6 @@ class CommonUtilites:
         except:
             driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
 
-
-    #
     @staticmethod
     def clear_input(element_locator):
         tag = WebDriverWait(driver=driver, timeout=explicit_wait_time).until(

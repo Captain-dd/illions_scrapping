@@ -29,7 +29,7 @@ class Util:
             return doctor_lst, doctor_details_lst
         except:
             return [], []
-    #
+
     def save_csv(self, city, doctor_name_lst, doctor_details):
         columns = ['name',  'city','address','mobile_number']
         df = pd.DataFrame(columns=columns)
@@ -55,4 +55,4 @@ class Util:
             except:
                 pass
 
-        df.to_csv('city.csv', index=False)
+        df.to_csv('data.csv', index=False)
