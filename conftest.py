@@ -5,7 +5,10 @@ from webdriver_manager.chrome import ChromeDriverManager
 import pytest
 
 option = Options()
-option.headless =True
+
+# if True then browser UI will not be visible
+# if False then browser UI will be visible
+option.headless = False
 driver = webdriver.Chrome(ChromeDriverManager().install(), options=option)
 
 @pytest.fixture()

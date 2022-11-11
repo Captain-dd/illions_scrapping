@@ -55,4 +55,4 @@ class Util:
             except:
                 pass
 
-        df.to_csv('city.csv', index=False)
+        df.to_csv('data.csv', index=False)
