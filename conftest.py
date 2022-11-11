@@ -8,7 +8,7 @@ option = Options()
 
 # if True then browser UI will not be visible
 # if False then browser UI will be visible
-option.headless = True
+option.headless = False
 driver = webdriver.Chrome(ChromeDriverManager().install(), options=option)
 
 @pytest.fixture()
